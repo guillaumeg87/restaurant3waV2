@@ -9,11 +9,26 @@
 <?php endif; ?>
 <!-- Code HTML à écrire -->
 
+<!-- <?php var_dump($all_menu); ?> -->
+
 
 <!-- Liste des aliments -->
-<table class="generic-table meal-list">
-    <caption>Carte du restaurant</caption>
-    <tbody>
-        <!-- Code HTML à écrire -->
-    </tbody>
-</table>
+<section class="flex">
+<?php foreach ($all_menu as $menu) {
+  ?>
+
+        <div class="menu_home">
+              <h3>Menu <?= $menu["nom_menu"] ?></h3>
+
+              <p>Entrée : <?= $menu["entree"] ?></p>
+              <p>Plat : <?= $menu["plat"] ?></p>
+              <p>Dessert : <?= $menu["dessert"] ?></p>
+              <p>Tarif : <?= $menu["tarif"] ?> €</p>
+              <a href="#" class="bouton_commande" data-id="<?= $menu["id"] ?>" data-tarif="<?= $menu["tarif"] ?>">Commander</a>
+
+        </div>
+
+  <?php
+} ?>
+
+</section>

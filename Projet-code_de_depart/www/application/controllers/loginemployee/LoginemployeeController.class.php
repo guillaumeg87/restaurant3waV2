@@ -3,12 +3,14 @@
 class LoginemployeeController{
 
   public function httpGetMethod(){
+    $create_session = new Usersession();
 
       return ['flashBag' => new FlashBag()];
 
     }
 
     public function httpPostMethod(Http $http, array $queryFields){
+      $create_session = new Usersession();
 
           $values = [];
           $values['nom'] = $queryFields['nom'];
@@ -19,7 +21,6 @@ class LoginemployeeController{
           $result = $new_log->read($values);
             var_dump($result);
       if($result != false){
-          $create_session = new Usersession();
 
           $create_session->create($result);// create($userId, $firstName, $lastName, $email)
           $_SESSION['type']="salarie";

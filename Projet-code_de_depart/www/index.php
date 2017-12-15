@@ -30,3 +30,12 @@ require_once 'library/ModelInterface.interface.php';
 
 $microKernel = new MicroKernel();
 $microKernel->bootstrap()->run(new FrontController());
+
+// if(isset($result) && isset($result['id'])){
+//   var_dump($_SESSION);
+// }
+// else{
+//   var_dump(isset($_SESSION));
+//
+//   var_dump("Pas conectéS");
+// }

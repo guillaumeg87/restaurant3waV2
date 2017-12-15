@@ -143,6 +143,39 @@ html
     vertical-align: bottom;
 }
 
+.flex{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/*
+ * CSS bouton nav
+ */
+.lienNav{
+  background-color: #aaa;
+  padding: 1em 1em 1em;
+  border-radius: 10px;
+  transition: 0.5s ease-in;
+}
+
+.lienNav:hover{
+  background-color: #ccc;
+  padding: 1em 1em 1em;
+  border-radius: 10px;
+  transition: 1s ease-in;
+  border: solid #fb1 2px;
+}
+
+nav{
+  display: block;
+  width: 100%;
+}
+
+nav ul{
+  display: flex;
+  justify-content: space-around;
+}
 
 /*
  * CSS de l'interface utilisateur
@@ -266,4 +299,22 @@ html
 .invoice .city
 {
     text-transform: uppercase;
+}
+
+
+/*
+ * Bloc menu sur Home
+ */
+
+.menu_home{
+  color:#459821;
+  background-color: #0b1;
+  width: 40%;
+  padding: 1em 3%;
+  margin: 1em 3%;
+}
+
+.bouton_commande{
+  background-color: #fb1;
+  padding:0.5em 3%;
 }

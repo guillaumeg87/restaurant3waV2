@@ -4,12 +4,16 @@ class MenuController
 {
 
   public function httpGetMethod(){
+    $new_session = new Usersession();
+
 
       return ['flashBag' => new FlashBag()];
 
     }
 
     public function httpPostMethod(Http $http, array $queryFields){
+      $new_session = new Usersession();
+
 
           $values = [];
           $values['nom_menu'] = $queryFields['nom_menu'];
@@ -21,7 +25,7 @@ class MenuController
           $new_log = new MenuModel(new Database());
 
           $result = $new_log->write($values);
-          $http->redirectTo("/menu");
+          $http->redirectTo("/listemenu");
     }
 
 
