@@ -1,0 +1,66 @@
+{
+    "name": "AbstractModel",
+    "line": 3,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "",
+    "file": "\/home\/wap45\/sites\/DEVELOPPEMENT\/jour23-projet\/Projet-code_de_depart\/config\/..\/www\/application\/classes\/AbstractModel.class.php",
+    "relative_file": null,
+    "hash": "2f6298443c3289247471e046a4d31802539c8b5d",
+    "parent": null,
+    "modifiers": 16,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": null,
+    "errors": [],
+    "interfaces": {
+        "ModelInterface": "ModelInterface"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 4,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "bd": {
+                    "name": "bd",
+                    "line": 4,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Database",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Database"
+                        ],
+                        "attributes": {
+                            "startLine": 4,
+                            "endLine": 4
+                        }
+                    },
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

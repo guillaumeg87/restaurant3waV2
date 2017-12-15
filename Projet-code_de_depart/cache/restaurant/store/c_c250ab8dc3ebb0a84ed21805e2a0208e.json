@@ -1,0 +1,104 @@
+{
+    "name": "CreateaccountController",
+    "line": 6,
+    "short_desc": "Objet permettant de cr\u00e9er un nouveau compte utilisateur",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "",
+    "file": "\/home\/wap45\/sites\/DEVELOPPEMENT\/jour23-projet\/Projet-code_de_depart\/config\/..\/www\/application\/controllers\/createaccount\/CreateaccountController.class.php",
+    "relative_file": null,
+    "hash": "5481cf4a9929610f2b6f052720e099690d356fc4",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": null,
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "httpGetMethod": {
+            "name": "httpGetMethod",
+            "line": 13,
+            "short_desc": "[httpGetMethod description]",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\[method]",
+                    false
+                ]
+            ],
+            "hint_desc": "[r\u00e9alise les requetes GET]",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "httpPostMethod": {
+            "name": "httpPostMethod",
+            "line": 27,
+            "short_desc": "[httpPostMethod description]",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\[type]",
+                    false
+                ]
+            ],
+            "hint_desc": "[description]",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "http": {
+                    "name": "http",
+                    "line": 27,
+                    "short_desc": "[indique le type de requete, dans ce cas POST]",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Http",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Http"
+                        ],
+                        "attributes": {
+                            "startLine": 27,
+                            "endLine": 27
+                        }
+                    },
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "queryFields": {
+                    "name": "queryFields",
+                    "line": 27,
+                    "short_desc": "[tableau contenant le contenu du formulaire d'inscription]",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

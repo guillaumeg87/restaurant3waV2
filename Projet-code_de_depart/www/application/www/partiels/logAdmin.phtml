@@ -1,0 +1,21 @@
+<?php
+if(isset($_SESSION) && !empty($_SESSION) && !isset($_SESSION['prenom'])){
+?>
+  <a href="stopsession" id="disconnect" class="linkStart">Se déconnecter</a>
+
+<?php
+}
+else{
+?>
+<div id="logAdmin">
+  <a id="linkAdmin" href="#">Administration</a>
+  <form class="hidden logEmployee" action="<?= $requestUrl ?>/loginemployee" method="post">
+        <label for="nom">Nom : <input type="text" name="nom" value=""></label>
+        <label for="mdp">Mot de passe : <input type="text" name="mdp" value=""></label>
+        <button type="submit" name="">Se connecter >></button>
+        <button type="reset" name="">Annuler</button>
+  </form>
+</div>
+<?php
+}
+?>

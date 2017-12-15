@@ -1,0 +1,45 @@
+<h1>Gerez la carte de votre restaurant</h1>
+
+<?php
+if(isset($_SESSION)){
+ ?>
+  <p>Bonjour <strong><?= ucFirst($_SESSION['nom']) ?></strong>... C'est une heure pour embaucher...?</p>
+<?php
+}else{
+  ?>
+
+<?php
+}
+ ?>
+
+<section class="container">
+  <form id="formCreateMenu" action="<?= $requestUrl ?>/menu" method="post">
+
+      <fieldset>
+
+        <label for="nom">Nom du menu: <input type="text" name="nom_menu" value="" required></label>
+        <label for="entree">Entrée : <input type="text" name="entree" value="" required></label>
+        <label for="plat">Plat : <input type="text" name="plat" value="" required></label>
+        <label for="dessert">Dessert : <input type="text" name="dessert" value="" required></label>
+        <label for="tarif">Tarif : <input type="text" name="tarif" value="" required></label>
+        <button type="submit" name="" id="addMenu">Envoyer <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+        <button type="reset" name="">Annuler <i class="fa fa-eraser" aria-hidden="true"></i>
+</button>
+      </fieldset>
+
+  </form>
+
+  <aside class="">
+    <h2>Liste des menus du restaurant</h2>
+    <div class="list_menu">
+<p>Ici bientôt la liste des menu disponible</p>
+    </div>
+  </aside>
+</section>
+<section class="">
+  <h2>Liste des commandes</h2>
+  <div class="list_commande">
+    <p>Ici bientôt la liste des commandes</p>
+
+  </div>
+</section>

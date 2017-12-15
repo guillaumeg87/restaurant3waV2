@@ -1,0 +1,6 @@
+{
+    "require": {
+        "symfony/finder": "^3.4",
+        "sami/sami": "^4.0"
+    }
+}

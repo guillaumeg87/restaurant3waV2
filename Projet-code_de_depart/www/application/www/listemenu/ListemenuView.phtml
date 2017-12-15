@@ -1,0 +1,69 @@
+<?php $new_session = new Usersession(); ?>
+
+<?php //var_dump($menus);die; ?>
+<?php
+
+
+ ?>
+<table>
+      <thead>
+                <tr>
+                  <td>Listes des menus</td>
+                </tr>
+                <?php
+              foreach ($menus as $array) {
+                ?>
+                <tr>
+                      <?php
+                      $id_menus = array_slice($array, 0, 1, false);
+                      // var_dump($id_menus);
+                      $edit_list = array_slice($array, -5, null, false);
+                      // var_dump($edit_list);
+                      foreach ($edit_list as $key => $value) {
+
+                        ?>
+                      <td>
+                            <?= str_replace("_", " ", ucfirst($key)); ?>
+                      </td>
+                  <?php
+                  };break;// deuxième foreach
+                  ?>
+                </tr>
+                <?php
+                };// 1er Foreach
+                ?>
+      </thead>
+  <tbody>
+            <?php
+            foreach ($menus as $array) {
+            ?>
+              <tr>
+                  <?php
+                  $id_menus = array_slice($array, 0, 1, false);
+                  // var_dump($id_menus);
+                  $edit_list = array_slice($array, -5, null, false);
+                  // var_dump($edit_list);
+                  foreach ($edit_list as $key => $value) {
+
+                  ?>
+                    <td>
+                          <?php
+                          if($value == $array['nom_menu']){
+                          ?>
+                              <a href="<?= $requestUrl ?>/editmenu?id_menus=<?= $id_menus['id'] ?>"><?= str_replace("_", " ", ucfirst($value)); ?></a>
+                          <?php
+                          }// if
+                          else{
+                          ?>
+                                  <?= str_replace("_", " ", ucfirst($value)); ?>
+                          <?php
+                          }// else
+                    }// 2eme foreach
+                          ?>
+                    </td>
+              </tr>
+              <?php
+              };// 1er Foreach
+              ?>
+  </tbody>
+</table>

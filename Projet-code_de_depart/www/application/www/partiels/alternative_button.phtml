@@ -1,0 +1,12 @@
+<?php
+      if(isset($_SESSION) && !empty($_SESSION)){
+  ?>
+          <a href="stopsession" id="disconnect" class="linkStart">Se déconnecter</a>
+  <?php
+      }
+      else{
+  ?>
+          <a href="#" id="connect" class="linkStart">Se connecter</a>
+          <a href="<?= $requestUrl ?>/createaccount" id="create_compte" class="linkStart">Créer un compte</a>
+  <?php
+      }

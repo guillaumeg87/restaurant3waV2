@@ -1,0 +1,51 @@
+<?php
+// $new_session = new Usersession();
+// var_dump($edit_menu);
+
+
+
+if(isset($_SESSION)){
+ ?>
+  <p>Bonjour <strong><?= ucFirst($_SESSION['nom']) ?></strong>... C'est une heure pour embaucher...?</p>
+<?php
+}else{
+  ?>
+
+<?php
+}
+
+ ?>
+<h2>Modifier / Suprimer un menu</h2>
+<section class="container">
+  <form id="formCreateMenu" action="<?= $requestUrl ?>/editmenu" method="post">
+
+      <fieldset>
+
+        <label for="nom">Nom du menu: <input type="text" name="nom_menu" value="<?= $edit_menu['nom_menu'] ?>" required></label>
+        <label for="entree">Entrée : <input type="text" name="entree" value="<?= $edit_menu['entree'] ?>" required></label>
+        <label for="plat">Plat : <input type="text" name="plat" value="<?= $edit_menu['plat'] ?>" required></label>
+        <label for="dessert">Dessert : <input type="text" name="dessert" value="<?= $edit_menu['dessert'] ?>" required></label>
+        <label for="tarif">Tarif : <input type="text" name="tarif" value="<?= $edit_menu['tarif'] ?>" required></label>
+              <input type="hidden" name="id" value="<?= $edit_menu['id'] ?>">
+        <button type="submit" name="" id="addMenu">Modifier <i class="fa fa-refresh" aria-hidden="true"></i></button>
+        <a id="deleteMenu" href="<?= $requestUrl ?>/menu/deletemenu?id=<?= $edit_menu['id'] ?>">Supprimer <i class="fa fa-trash" aria-hidden="true"></i></a>
+        <button type="reset" name="">Annuler <i class="fa fa-eraser" aria-hidden="true"></i></button>
+
+      </fieldset>
+
+  </form>
+
+  <aside class="">
+    <h2>Liste des menus du restaurant</h2>
+    <div class="list_menu">
+<p>Ici bientôt la liste des menu disponible</p>
+    </div>
+  </aside>
+</section>
+<section class="">
+  <h2>Liste des commandes</h2>
+  <div class="list_commande">
+    <p>Ici bientôt la liste des commandes</p>
+
+  </div>
+</section>
