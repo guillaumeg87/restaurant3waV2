@@ -1,5 +1,7 @@
 <?php
-if(isset($_SESSION) && !empty($_SESSION) && !isset($_SESSION['prenom'])){
+$new_log = new Usersession();
+$check_log = $new_log->isAuthenticated();
+if($check_log == true){
 ?>
   <a href="stopsession" id="disconnect" class="linkStart">Se déconnecter</a>
 

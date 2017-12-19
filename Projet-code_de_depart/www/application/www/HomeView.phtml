@@ -1,6 +1,20 @@
+<?php
+  if(!isset($_SESSION) && !isset($_SESSION["prenom"])){ ?>
 
+    <p>Bienvenue dans notre restaurant, <a href="<?= $requestUrl ?>/createaccount">inscrivez-vous</a> pour commander !</p>
+
+<?php }else if (isset($_SESSION) && isset($_SESSION["prenom"])){
+  // var_dump("SESSION : " . $_SESSION['nom']);
+
+  ?>
+  <p>Bonjour <strong><?= $_SESSION['prenom'] ?></strong>, que voulez-vous manger aujourd'hui?</p>
+
+  <?php
+    } ?>
 <!-- Message de notification -->
+
 <?php if(isset($flashBag) && $flashBag->hasMessages() == true): ?>
+  <?php var_dump($flashBag); ?>
     <aside id="notice" class="notice">
         <?php foreach($flashBag->fetchMessages() as $message): ?>
             <p><?= $message ?></p>
@@ -9,13 +23,17 @@
 <?php endif; ?>
 <!-- Code HTML à écrire -->
 
-<!-- <?php var_dump($all_menu); ?> -->
+<?php //var_dump($all_menus); ?>
 
 
-<!-- Liste des aliments -->
-<section class="flex">
-<?php foreach ($all_menu as $menu) {
-  ?>
+
+
+
+<!-- Liste des menus -->
+
+<section class="flex liste_menu">
+  <?php foreach ($all_menus as $menu) {
+    ?>
 
         <div class="menu_home">
               <h3>Menu <?= $menu["nom_menu"] ?></h3>
@@ -24,8 +42,19 @@
               <p>Plat : <?= $menu["plat"] ?></p>
               <p>Dessert : <?= $menu["dessert"] ?></p>
               <p>Tarif : <?= $menu["tarif"] ?> €</p>
-              <a href="#" class="bouton_commande" data-id="<?= $menu["id"] ?>" data-tarif="<?= $menu["tarif"] ?>">Commander</a>
-
+              <form class="" action="<?= $requestUrl ?>/addtobasket" method="post">
+                <input type="hidden" name="id" value="<?= $menu['id'] ?>">
+                <select class="" name="quantite">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
+                <button type="submit" name="">Commander</button>
+              </form>
         </div>
 
   <?php

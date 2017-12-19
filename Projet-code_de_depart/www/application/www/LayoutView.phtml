@@ -33,10 +33,26 @@
       </aside>
   <?php endif; ?>
     <h1>
-        <a href="<?= $requestUrl ?>/">
-            <img src="<?= $wwwUrl ?>/images/logo.gif" height="63" width="57" alt="3WA Restaurant">Restaurant - la fin des haricots...        </a>
+          <a href="<?= $requestUrl ?>/">
+            <img src="<?= $wwwUrl ?>/images/logo.gif" height="63" width="57" alt="3WA Restaurant">Restaurant - NO NAME</a>
     </h1>
-<!-- INCLUSION DE LA NAV-->
+<?php
+if(isset($_SESSION)){
+    if(!isset($_SESSION['panier'])){
+        $_SESSION['panier'] = 0;
+        $panier = $_SESSION['panier'];
+        // var_dump("1 :" . $panier);
+
+        }// if 2
+    }//if 1
+else{
+    $panier = 0;
+    // var_dump("2 :" . $panier);
+}
+ ?>
+
+ <!-- INCLUSION DE LA NAV-->
+
               <?php include "partiels/nav_button.phtml" ?>
 
 
@@ -50,6 +66,7 @@
 <main>
     <!-- Affichage du template lié à la vue -->
     <?php include $this->viewData['template'] ?>
+
 </main>
 
 <!-- Pied de page commun -->

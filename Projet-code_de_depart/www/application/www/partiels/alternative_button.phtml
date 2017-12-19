@@ -1,7 +1,10 @@
 <?php
-      if(isset($_SESSION) && !empty($_SESSION)){
+$new_log = new Usersession();
+$check_log = $new_log->isAuthenticated();
+
+      if($check_log == true){
   ?>
-          <a href="stopsession" id="disconnect" class="linkStart">Se déconnecter</a>
+          <a href="<?= $requestUrl ?>/stopsession" id="disconnect" class="linkStart">Se déconnecter</a>
   <?php
       }
       else{

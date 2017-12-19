@@ -1,4 +1,33 @@
-
+<?php
+$new_log = new Usersession();
+$check_log = $new_log->isAuthenticated();
+ ?>
   <p>Bonjour <strong><?= $_SESSION['prenom'] ?></strong>, que voulez-vous manger aujourd'hui?</p>
+<!-- <?php //var_dump($_SESSION); ?> -->
+<!-- <?php //var_dump($all_menus); ?> -->
 
-    <h1>TEST</h1>
+<!-- A coller sur une autre page -->
+
+<section id="profil">
+  <h2>Mon profil</h2>
+
+  <ul>
+    <li>Nom : <?= $_SESSION['nom'] ?></li>
+    <li>Prénom : <?= $_SESSION['prenom'] ?></li>
+    <li>Mail : <?= $_SESSION['mail'] ?></li>
+    <li>Adresse : <?= $_SESSION['adresse'] ?></li>
+    <li>CP : <?= $_SESSION['cp'] ?></li>
+    <li>Ville : <?= $_SESSION['ville'] ?></li>
+  </ul>
+  <a href="#" name="">Modifier mon compte</a>
+  <a href="#" name="">Supprimer mon compte</a>
+</section>
+<section>
+  <h2>Mes dernières commande</h2>
+  <p>Pressé? Cliquez sur une commande pour repasser la même !</p>
+  <ul>
+    <li>Ici bientôt les dernières commandes</li>
+
+  </ul>
+
+</section>

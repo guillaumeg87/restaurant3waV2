@@ -1,4 +1,6 @@
-<?php $new_session = new Usersession(); ?>
+<?php $new_session = new Usersession();
+$check_log = $new_log->isAuthenticated();
+?>
 
 <?php //var_dump($menus);die; ?>
 <?php
@@ -43,6 +45,7 @@
                   // var_dump($id_menus);
                   $edit_list = array_slice($array, -5, null, false);
                   // var_dump($edit_list);
+                
                   foreach ($edit_list as $key => $value) {
 
                   ?>

@@ -10,7 +10,7 @@ class LoginemployeeController{
     }
 
     public function httpPostMethod(Http $http, array $queryFields){
-      $create_session = new Usersession();
+
 
           $values = [];
           $values['nom'] = $queryFields['nom'];
@@ -19,12 +19,13 @@ class LoginemployeeController{
           $new_log = new LoginEmployeeModel(new Database());
 
           $result = $new_log->read($values);
-            var_dump($result);
+            // var_dump($result);
       if($result != false){
+        $create_session = new Usersession();
 
           $create_session->create($result);// create($userId, $firstName, $lastName, $email)
-          $_SESSION['type']="salarie";
-          var_dump($_SESSION);
+          $_SESSION['user'] = 2;
+          // var_dump($_SESSION);
           $flash_msg_connection = new FlashBag;
           $message = "Vous êtes connecté !";
           $flash_msg_connection->add($message);

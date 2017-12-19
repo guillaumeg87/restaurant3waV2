@@ -1,7 +1,9 @@
 <h1>Gerez la carte de votre restaurant</h1>
 
 <?php
-if(isset($_SESSION)){
+$new_log = new Usersession();
+$check_log = $new_log->isAuthenticated();
+if($check_log == true){
  ?>
   <p>Bonjour <strong><?= ucFirst($_SESSION['nom']) ?></strong>... C'est une heure pour embaucher...?</p>
 <?php
@@ -16,7 +18,7 @@ if(isset($_SESSION)){
   <form id="formCreateMenu" action="<?= $requestUrl ?>/menu" method="post">
 
       <fieldset>
-
+          <legend>Ajouter un nouveau menu</legend>
         <label for="nom">Nom du menu: <input type="text" name="nom_menu" value="" required></label>
         <label for="entree">Entrée : <input type="text" name="entree" value="" required></label>
         <label for="plat">Plat : <input type="text" name="plat" value="" required></label>
@@ -29,17 +31,17 @@ if(isset($_SESSION)){
 
   </form>
 
-  <aside class="">
+  <!-- <aside class="">
     <h2>Liste des menus du restaurant</h2>
     <div class="list_menu">
 <p>Ici bientôt la liste des menu disponible</p>
     </div>
-  </aside>
+  </aside> -->
 </section>
-<section class="">
+<!-- <section class="">
   <h2>Liste des commandes</h2>
   <div class="list_commande">
     <p>Ici bientôt la liste des commandes</p>
 
   </div>
-</section>
+</section> -->

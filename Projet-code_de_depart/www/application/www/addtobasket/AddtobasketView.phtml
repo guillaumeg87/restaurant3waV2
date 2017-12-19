@@ -1,0 +1,19 @@
+    <h1>Ajout au panier</h1>
+
+<?php
+$new_log = new Usersession();
+$check_log = $new_log->isAuthenticated();
+if($check_log == false){
+?>
+  <p><a href="<?= $requestUrl ?>/">Retour à l'accueil</a><?php //$_SESSION['panier'] ?></p>
+
+<?php
+}else{
+?>
+<p>TEST</p>
+
+<p>Vous avez <?= $_SESSION['total_quantity'] ?> articles dans le panier !</p>
+<a href="<?= $requestUrl ?>/">Continuer la commande</a>
+<a href="<?= $requestUrl ?>/addtobasket/basketlist">Passer à la caisse</a>
+<?php
+}?>

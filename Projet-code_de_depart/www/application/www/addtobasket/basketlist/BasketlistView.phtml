@@ -1,0 +1,77 @@
+    <h1>Mon panier</h1>
+
+<?php
+$new_log = new Usersession();
+$check_log = $new_log->isAuthenticated();
+if($check_log == false){
+?>
+  <p>ERREUR : <a href="<?= $requestUrl ?>/">Retour à l'accueil</a><?php //$_SESSION['panier'] ?></p>
+
+<?php
+}else{
+?>
+<p>TEST</p>
+
+<p>Vous avez <?= $_SESSION['total_quantity'] ?> articles dans le panier !</p>
+<!-- <?php //var_dump($_SESSION['panier']); ?> -->
+<table>
+  <thead>
+      <tr>
+        <?php foreach ($_SESSION['panier'] as $menus): ?>
+          <?php
+                $id_menus = array_slice($menus, 0, 1, false);
+                // var_dump($id_menus);
+                $edit_list = array_slice($menus, -2, null, false);
+                // var_dump($edit_list);
+           ?>
+                  <?php foreach ($edit_list as $key => $value):?>
+
+                      <td>
+
+                          <?= str_replace("_", " ", ucfirst($key)); ?>
+
+                      </td>
+
+
+                    <?php endforeach;break; //2me foreach?>
+        <?php endforeach; // 1er foreach?>
+      </tr>
+  </thead>
+  <tbody>
+
+    <?php  ?>
+
+            <?php
+            // var_dump($_SESSION['panier']);
+                  //$id_menus = array_slice($menus, 0, 1, false);
+
+                  //$edit_list = array_slice($menus, -2, null, false);
+
+             ?>
+              <?php //foreach ($edit_list as $key => $value):?>
+
+                  <td>
+
+                      <?php //ucfirst($value); ?>
+
+                  </td>
+
+                <?php //endforeach; //2me foreach?>
+    <?php //endforeach; // 1er foreach?>
+
+
+  </tbody>
+</table>
+
+<?php
+
+foreach ($_SESSION['panier'] as $menus) {
+
+}
+
+ ?>
+
+<a href="<?= $requestUrl ?>/">Continuer la commande</a>
+<a href="#">Passer à la caisse</a>
+<?php
+}?>

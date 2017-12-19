@@ -1,26 +1,31 @@
 <?php
-if(isset($_SESSION)){
-    if(!array_key_exists('type', $_SESSION)){ // Si c'est un client
+$new_log = new Usersession();
+$check_log = $new_log->isAuthenticated();
+// var_dump($check_log);
+if($check_log == true){
+      if($_SESSION['user'] == 1){ // Si c'est un client
   ?>
     <nav class="user-interface">
         <ul class="link-list">
             <!-- Code HTML/PHP à écrire -->
             <li><a href="<?= $requestUrl ?>/" class="lienNav">Home</a></li>
             <li><a href="#" class="lienNav">Menu</a></li>
-            <li><a href="#" class="lienNav">Accès</a></li>
+            <li><a href="#" clpanierass="lienNav">Accès</a></li>
+            <li><a href="<?= $requestUrl ?>/loginclient" class="lienNav">Mon Compte</a></li>
             <li id="bloc_connect">
               <?php include "alternative_button.phtml" ?>
             </li>
+            <li><a href="<?= $requestUrl ?>/addtobasket/basketlist" ><?= !isset($_SESSION['total_quantity'])? 0 : $_SESSION['total_quantity']; ?> <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
         </ul>
     </nav>
  <form class="hidden formConnect" action="<?= $requestUrl ?>/loginclient" method="post">
        <label for="mail">Mail : <input type="text" name="mail" value=""></label>
-       <label for="mdp">Mot de passe : <input type="text" name="mdp" value=""></label>
+       <label for="mdp">Mot de passe : <input type="password" name="mdp" value=""></label>
        <button type="submit" name="">Se connecter >></button>
        <button type="reset" name="">Annuler</button>
 
  </form>
- <?php }else{ // Si c'est un salarié?>
+ <?php }elseif($_SESSION['user'] == 2){ // Si c'est un salarié?>
 
    <nav class="admin-interface">
        <ul class="link-list">
@@ -47,11 +52,12 @@ if(isset($_SESSION)){
             <a href="#" id="connect" class="linkStart">Se connecter</a>
             <a href="<?= $requestUrl ?>/createaccount" id="create_compte" class="linkStart">Créer un compte</a>
           </li>
+          <li><a href="<?= $requestUrl ?>/addtobasket/basketlist" ><?= $panier = 0 ?> <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
       </ul>
   </nav>
 <form class="hidden formConnect" action="<?= $requestUrl ?>/loginclient" method="post">
      <label for="mail">Mail : <input type="text" name="mail" value=""></label>
-     <label for="mdp">Mot de passe : <input type="text" name="mdp" value=""></label>
+     <label for="mdp">Mot de passe : <input type="password" name="mdp" value=""></label>
      <button type="submit" name="">Se connecter >></button>
      <button type="reset" name="">Annuler</button>
 </form>
