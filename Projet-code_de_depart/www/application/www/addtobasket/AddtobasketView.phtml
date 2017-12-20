@@ -1,4 +1,4 @@
-    <h1>Ajout au panier</h1>
+    <h2>Ajout au panier</h2>
 
 <?php
 $new_log = new Usersession();
@@ -10,10 +10,9 @@ if($check_log == false){
 <?php
 }else{
 ?>
-<p>TEST</p>
-
+<p>Votre article a bien été ajoué au panier !</p>
 <p>Vous avez <?= $_SESSION['total_quantity'] ?> articles dans le panier !</p>
 <a href="<?= $requestUrl ?>/">Continuer la commande</a>
-<a href="<?= $requestUrl ?>/addtobasket/basketlist">Passer à la caisse</a>
+<a href="<?= $requestUrl ?>/addtobasket/basketlist">Voir mon panier >></a>
 <?php
 }?>

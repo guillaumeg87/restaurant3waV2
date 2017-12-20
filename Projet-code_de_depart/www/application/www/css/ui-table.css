@@ -58,3 +58,7 @@
     background-color: #339966;
     color: white;
 }
+
+.generic-table input{
+  color : #000;
+}

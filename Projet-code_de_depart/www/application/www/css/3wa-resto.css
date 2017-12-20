@@ -18,15 +18,17 @@ a:hover
     color: #339966;
 }
 
-body
+main
 {
     /* structure */
-    border-top: 1.5em solid #EF4036;
+    /*border-top: 1.5em solid #EF4036;*/
     padding: 1em 5em;
 
     /* presentation */
     font-family: 'Karla', sans-serif;
 }
+
+
 
 fieldset
 {
@@ -39,6 +41,7 @@ fieldset
     border-color: #1E593B;
     border-radius: 6px;
 }
+
 fieldset legend
 {
     /* structure */
@@ -64,16 +67,22 @@ footer .fa-heart
 
 h1
 {
-    color: #EF4036;
+padding-top: 5em;
+padding-bottom: 15em;
+    color: #E6BEAE;
+    font-size: 2em;
     font-family: 'Oleo Script Swash Caps', cursive;
     letter-spacing: 0.15em;
     text-align: center;
+    text-shadow: 5px 5px  #E7D8C9, 10px 10px  #EEE4E1;
 }
+
 h1 a,
 h1 a:hover
 {
     color: inherit;
 }
+
 h1 img
 {
     margin-right: 0.5em;
@@ -91,8 +100,8 @@ h2
 
 html
 {
-    background: url('../images/background.png') repeat;
-    overflow-y: scroll;
+    /*background: url('../images/background.png') repeat;*/
+    /*overflow-y: scroll;*/
 }
 
 li{
@@ -153,22 +162,15 @@ li{
 }
 
 /*
- * CSS bouton nav
+ * CSS header perso
  */
-/*.lienNav{
-  background-color: #aaa;
-  padding: 1em 1em 1em;
-  border-radius: 10px;
-  transition: 0.5s ease-in;
-}
+header{
+  display: block;
+  width: 100%;
+  background: url("../images/banner.jpg") no-repeat;
+  background-size: cover;
 
-.lienNav:hover{
-  background-color: #ccc;
-  padding: 1em 1em 1em;
-  border-radius: 10px;
-  transition: 1s ease-in;
-  border: solid #fb1 2px;
-}*/
+}
 
 nav{
   display: block;
@@ -178,6 +180,9 @@ nav{
 nav ul{
   display: flex;
   justify-content: space-around;
+  /*margin-top: 27em;*/
+  padding: 1em 3%;
+  background-color: #E6BEAE;
 }
 
 /*
@@ -310,11 +315,13 @@ nav ul{
  */
 
 .menu_home{
-  color:#459821;
-  background-color: #0b1;
+  color:#EEE4E1;
+  background-color: #B2967D;
   width: 40%;
   padding: 1em 3%;
   margin: 1em 3%;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px #555;
 }
 
 .bouton_commande{
@@ -332,4 +339,10 @@ nav ul{
 
 #profil li{
   list-style-type: none;
+}
+
+/*Champs quantité du panier*/
+.quantity-fields{
+  width: 40px;
+  text-align: center;
 }

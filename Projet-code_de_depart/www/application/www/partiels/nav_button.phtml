@@ -8,21 +8,21 @@ if($check_log == true){
     <nav class="user-interface">
         <ul class="link-list">
             <!-- Code HTML/PHP à écrire -->
-            <li><a href="<?= $requestUrl ?>/" class="lienNav">Home</a></li>
-            <li><a href="#" class="lienNav">Menu</a></li>
-            <li><a href="#" clpanierass="lienNav">Accès</a></li>
-            <li><a href="<?= $requestUrl ?>/loginclient" class="lienNav">Mon Compte</a></li>
+            <li><a href="<?= $requestUrl ?>/" class="button button-primary">Home</a></li>
+            <li><a href="#" class="button button-primary">Menu</a></li>
+            <li><a href="#" class="button button-primary">Accès</a></li>
+            <li><a href="<?= $requestUrl ?>/loginclient" class="button button-primary">Mon Compte</a></li>
             <li id="bloc_connect">
               <?php include "alternative_button.phtml" ?>
             </li>
-            <li><a href="<?= $requestUrl ?>/addtobasket/basketlist" ><?= !isset($_SESSION['total_quantity'])? 0 : $_SESSION['total_quantity']; ?> <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+            <li><a href="<?= $requestUrl ?>/addtobasket/basketlist" class="button button-primary"><?= !isset($_SESSION['total_quantity'])? 0 : $_SESSION['total_quantity']; ?> <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
         </ul>
     </nav>
- <form class="hidden formConnect" action="<?= $requestUrl ?>/loginclient" method="post">
+ <form class="hidden formConnect generic-form" action="<?= $requestUrl ?>/loginclient" method="post">
        <label for="mail">Mail : <input type="text" name="mail" value=""></label>
        <label for="mdp">Mot de passe : <input type="password" name="mdp" value=""></label>
-       <button type="submit" name="">Se connecter >></button>
-       <button type="reset" name="">Annuler</button>
+       <button type="submit" name="" class="button button-primary">Se connecter >></button>
+       <button type="reset" name="" class="button button-cancel">Annuler</button>
 
  </form>
  <?php }elseif($_SESSION['user'] == 2){ // Si c'est un salarié?>
@@ -30,9 +30,9 @@ if($check_log == true){
    <nav class="admin-interface">
        <ul class="link-list">
            <!-- Code HTML/PHP à écrire -->
-           <li><a href="<?= $requestUrl ?>/loginemployee" class="lienNav">Accueil Admin</a></li>
-           <li><a href="<?= $requestUrl ?>/listemenu" class="lienNav">Liste Menu</a></li>
-           <li><a href="<?= $requestUrl ?>/liste_commandes" class="lienNav">Liste Commandes</a></li>
+           <li><a href="<?= $requestUrl ?>/loginemployee" class="button button-primary">Accueil Admin</a></li>
+           <li><a href="<?= $requestUrl ?>/listemenu" class="button button-primary">Liste Menu</a></li>
+           <li><a href="<?= $requestUrl ?>/liste_commandes" class="button button-primary">Liste Commandes</a></li>
            <li id="bloc_connect">
              <?php include "alternative_button.phtml" ?>
            </li>
@@ -45,21 +45,21 @@ if($check_log == true){
   <nav class="user-interface">
       <ul class="link-list">
           <!-- Code HTML/PHP à écrire -->
-          <li><a href="<?= $requestUrl ?>/" class="lienNav">Home</a></li>
-          <li><a href="#" class="lienNav">Menu</a></li>
-          <li><a href="#" class="lienNav">Accès</a></li>
+          <li><a href="<?= $requestUrl ?>/" class="button button-primary">Home</a></li>
+          <li><a href="#" class="button button-primary">Menu</a></li>
+          <li><a href="#" class="button button-primary">Accès</a></li>
           <li id="bloc_connect">
-            <a href="#" id="connect" class="linkStart">Se connecter</a>
-            <a href="<?= $requestUrl ?>/createaccount" id="create_compte" class="linkStart">Créer un compte</a>
+            <a href="#" id="connect" class="button button-primary">Se connecter</a>
+            <a href="<?= $requestUrl ?>/createaccount" id="create_compte" class="button button-primary">Créer un compte</a>
           </li>
-          <li><a href="<?= $requestUrl ?>/addtobasket/basketlist" ><?= $panier = 0 ?> <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+          <li><a href="<?= $requestUrl ?>/addtobasket/basketlist" class="button button-primary"><?= $panier = 0 ?> <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
       </ul>
   </nav>
 <form class="hidden formConnect" action="<?= $requestUrl ?>/loginclient" method="post">
      <label for="mail">Mail : <input type="text" name="mail" value=""></label>
      <label for="mdp">Mot de passe : <input type="password" name="mdp" value=""></label>
-     <button type="submit" name="">Se connecter >></button>
-     <button type="reset" name="">Annuler</button>
+     <button type="submit" name="" class="button button-primary">Se connecter >></button>
+     <button type="reset" name="" class="button button-cancel">Annuler</button>
 </form>
 
 <?php } ?>

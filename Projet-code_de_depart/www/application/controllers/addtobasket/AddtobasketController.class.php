@@ -51,6 +51,7 @@ public function httpGetMethod(Http $http, array $queryFields){
           $stack = $new_basket->stock_article();
           $total = $new_basket->count_quantity();
           var_dump($total);
+
         }
 
     }

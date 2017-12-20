@@ -4,12 +4,12 @@ $check_log = $new_log->isAuthenticated();
 
       if($check_log == true){
   ?>
-          <a href="<?= $requestUrl ?>/stopsession" id="disconnect" class="linkStart">Se déconnecter</a>
+          <a href="<?= $requestUrl ?>/stopsession" id="disconnect" class="button">Se déconnecter</a>
   <?php
       }
       else{
   ?>
-          <a href="#" id="connect" class="linkStart">Se connecter</a>
-          <a href="<?= $requestUrl ?>/createaccount" id="create_compte" class="linkStart">Créer un compte</a>
+          <a href="#" id="connect" class="button button-primary">Se connecter</a>
+          <a href="<?= $requestUrl ?>/createaccount" id="create_compte" class="button button-primary">Créer un compte</a>
   <?php
       }

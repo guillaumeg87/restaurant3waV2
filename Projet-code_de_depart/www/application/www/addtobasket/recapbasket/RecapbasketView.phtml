@@ -1,24 +1,35 @@
-    <h2>Mon panier</h2>
+<!-- Message de notification -->
+
+<?php if(isset($flashBag) && $flashBag->hasMessages() == true): ?>
+  <?php var_dump($flashBag); ?>
+    <aside id="notice" class="notice">
+        <?php foreach($flashBag->fetchMessages() as $message): ?>
+            <p><?= $message ?></p>
+        <?php endforeach ?>
+    </aside>
+<?php endif; ?>
+
+
+
+    <h2>Finalisation de la commande</h2>
 
 <?php
 $new_log = new Usersession();
 $check_log = $new_log->isAuthenticated();
 if($check_log == false){
 ?>
-  <p>ERREUR : <a href="<?= $requestUrl ?>/">Retour à l'accueil</a></p>
+  <p><a href="<?= $requestUrl ?>/">Retour à l'accueil</a><?php //$_SESSION['panier'] ?></p>
 
 <?php
 }else{
 ?>
 
-
-    <p>Vous avez <?= $_SESSION['total_quantity'] ?> articles dans le panier !</p>
-    <!-- <?php //var_dump($_SESSION['panier']); ?> -->
-
-<form class="" action="<?= $requestUrl ?>/addtobasket/recapbasket" method="post">
+<section>
+  <h3>Récapitulatif de la commande</h3>
 
   <table id="recap_panier" class="generic-table">
     <thead>
+
         <tr>
           <?php foreach ($_SESSION['panier'] as $menus): ?>
                     <?php
@@ -40,7 +51,7 @@ if($check_log == false){
                               } elseif ($key == "id"){?>
                                 <td class="hidden">
 
-                                      <strong><?= ucfirst($key); ?></strong>
+                                    <strong><?= ucfirst($key); ?>
 
                                 </td>
 
@@ -48,7 +59,7 @@ if($check_log == false){
                                 }else{?>
                                 <td>
 
-                                      <strong><?= str_replace("_", " ", ucfirst($key)); ?></strong>
+                                    <strong><?= str_replace("_", " ", ucfirst($key)); ?></strong>
 
                                 </td>
                                 <?php
@@ -58,7 +69,7 @@ if($check_log == false){
           <?php endforeach; // 1er foreach?>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="body_calcul">
 
             <?php foreach ($_SESSION['panier'] as $menu){ ?>
               <tr>
@@ -76,38 +87,69 @@ if($check_log == false){
 
                         <?php if($key == "quantity"){
                           ?>
-                                <td id="basket_quantity"class="quantity" data-id="<?= $value ?>">
-                                        <a href="#" class="changeQuantity plus">+</a>
-                                            <input type="text" name="quantity[]" value="<?= $value ?>" class="quantity-fields">
-                                        <a href="#" class="changeQuantity moins">-</a>
+                                <td id="basket_quantity" class="quantity" data-id="<?= $value ?>">
+                                          <?= $value ?>
                                 </td>
                           <?php
                         } elseif ($key == "id"){?>
                                 <td class="hidden">
 
-                                    <input type="hidden" name="id[]" value="<?= $value ?>">
+                                    <?= ucfirst($value); ?>
+
+                                </td>
+
+
+                          <?php
+                        }elseif($key == "tarif"){?>
+
+                                <td class="tarif" data-id="<?= $value ?>" >
+
+                                    <?= ucfirst($value); ?>
 
                                 </td>
                           <?php
-                        } else{?>
+                        }else{?>
                                 <td>
+
                                     <?= str_replace("_", " ", ucfirst($value)); ?>
                                 </td>
                           <?php
                           }?>
+
                       <?php } //2me foreach?>
-                    </tr>
+
+              </tr>
+
             <?php } // 1er foreach?>
+            <tr>
+                    <td>
+                      Montant total de la commande
+                    </td>
+                    <td id="resultat">
+
+                    </td>
+
+            </tr>
+
     </tbody>
   </table>
-  <a href="<?= $requestUrl ?>/" class="button">Continuer la commande</a>
-  <button type="submit" name="" class="button button-primary">Passer à la caisse</button>
-
-</form>
+</section>
 
 
+<section id="profil">
+  <h3>Rappel de vos coordonnées</h3>
 
-<!-- <a href="<?php //$requestUrl ?>/" class="button ">Continuer la commande</a>
-<a href="<?php //$requestUrl ?>/addtobasket/recapbasket" class="button button-primary">Passer à la caisse</a> -->
+  <ul>
+    <li>Nom : <?= $_SESSION['nom'] ?></li>
+    <li>Prénom : <?= $_SESSION['prenom'] ?></li>
+    <li>Mail : <?= $_SESSION['mail'] ?></li>
+    <li>Adresse de livraison : <?= $_SESSION['adresse'] ?></li>
+    <li>CP : <?= $_SESSION['cp'] ?></li>
+    <li>Ville : <?= $_SESSION['ville'] ?></li>
+  </ul>
+
+</section>
+
+<a href="<?= $requestUrl ?>/addtobasket/recapbasket" class="button button-primary">Payer</a>
 <?php
 }?>

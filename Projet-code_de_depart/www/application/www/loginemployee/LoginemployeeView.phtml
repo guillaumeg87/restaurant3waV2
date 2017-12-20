@@ -1,4 +1,4 @@
-<h1>Gerez la carte de votre restaurant</h1>
+<h2>Gerez la carte de votre restaurant</h2>
 
 <?php
 $new_log = new Usersession();
@@ -15,15 +15,15 @@ if($check_log == true){
  ?>
 
 <section class="container">
-  <form id="formCreateMenu" action="<?= $requestUrl ?>/menu" method="post">
+  <form id="formCreateMenu" class="generic-form"action="<?= $requestUrl ?>/menu" method="post">
 
       <fieldset>
           <legend>Ajouter un nouveau menu</legend>
-        <label for="nom">Nom du menu: <input type="text" name="nom_menu" value="" required></label>
-        <label for="entree">Entrée : <input type="text" name="entree" value="" required></label>
-        <label for="plat">Plat : <input type="text" name="plat" value="" required></label>
-        <label for="dessert">Dessert : <input type="text" name="dessert" value="" required></label>
-        <label for="tarif">Tarif : <input type="text" name="tarif" value="" required></label>
+        <label for="nom">Nom du menu: <input type="text" name="nom_menu" value="" required></label></br>
+        <label for="entree">Entrée : <input type="text" name="entree" value="" required></label></br>
+        <label for="plat">Plat : <input type="text" name="plat" value="" required></label></br>
+        <label for="dessert">Dessert : <input type="text" name="dessert" value="" required></label></br>
+        <label for="tarif">Tarif : <input type="text" name="tarif" value="" required></label></br>
         <button type="submit" name="" id="addMenu">Envoyer <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
         <button type="reset" name="">Annuler <i class="fa fa-eraser" aria-hidden="true"></i>
 </button>
