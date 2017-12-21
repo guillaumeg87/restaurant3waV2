@@ -8,14 +8,14 @@
 
 a
 {
-    color : #1E593B;
+    color : #254E70;
     font-weight: bold;
     text-decoration: none;
     transition: color 0.25s;
 }
 a:hover
 {
-    color: #339966;
+    color: #37718E;
 }
 
 main
@@ -36,9 +36,9 @@ fieldset
     margin-bottom: 1em;
     padding-left: 1em;
     padding-right: 1em;
-
+text-align: left;
     /* presentation */
-    border-color: #1E593B;
+    border-color: #254E70;
     border-radius: 6px;
 }
 
@@ -48,8 +48,12 @@ fieldset legend
     padding: 0 0.5em;
 
     /* presentation */
-    color: #1E593B;
+    color: #254E70;
     font-weight: bold;
+}
+
+fieldset input{
+  margin: 1em 1% 1em 1%;
 }
 
 footer
@@ -69,12 +73,14 @@ h1
 {
 padding-top: 5em;
 padding-bottom: 15em;
-    color: #E6BEAE;
+font-family: 'McLaren', cursive;
+
+    color: #254E70;
     font-size: 2em;
-    font-family: 'Oleo Script Swash Caps', cursive;
+    /*font-family: 'Oleo Script Swash Caps', cursive;*/
     letter-spacing: 0.15em;
     text-align: center;
-    text-shadow: 5px 5px  #E7D8C9, 10px 10px  #EEE4E1;
+    text-shadow: 5px 5px  #37718E, 10px 10px  #8EE3EF;
 }
 
 h1 a,
@@ -95,7 +101,7 @@ h2
     margin: 1.5em 0;
 
     /* presentation */
-    color: #1E593B;
+    color: #37718E;
 }
 
 html
@@ -238,9 +244,9 @@ nav ul{
 
     /* presentation */
     background-color: rgba(208, 255, 255, 0.33);
-    border: 1px solid #339966;
+    border: 1px solid #254E70;
     border-radius: 6px;
-    color: #339966;
+    color: #254E70;
     font-size: 1.33em;
     text-align: center;
 }
@@ -251,7 +257,7 @@ nav ul{
  */
 .basket-empty
 {
-    color: #339966;
+    color: #254E70;
     font-size: 1.25em;
     font-weight: bold;
     text-align: center;
@@ -267,7 +273,7 @@ nav ul{
     /* presentation */
     background-color: #D0FFFF;
     border-radius: 4px;
-    border: 1px solid #1E593B;
+    border: 1px solid #254E70;
 }
 .meal-details:after
 {
@@ -302,7 +308,7 @@ nav ul{
     /* presentation */
     background-color: #D0FFFF;
     border-radius: 4px;
-    border: 1px solid #1E593B;
+    border: 1px solid #254E70;
 }
 .invoice .city
 {
@@ -316,13 +322,19 @@ nav ul{
 
 .menu_home{
   color:#EEE4E1;
-  background-color: #B2967D;
+  background-color: #254E70;
   width: 40%;
   padding: 1em 3%;
   margin: 1em 3%;
   border-radius: 10px;
   box-shadow: 10px 10px 10px #555;
 }
+
+.menu_home button, .menu_home select{
+  color:#254E70;
+}
+
+
 
 .bouton_commande{
   background-color: #fb1;

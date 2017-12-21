@@ -15,18 +15,18 @@ if($check_log == true){
 <?php
 }
  ?>
-
+ 
 <h2>Modifier / Suprimer un menu</h2>
 <section class="container">
-  <form id="formCreateMenu" action="<?= $requestUrl ?>/editmenu" method="post">
+  <form id="formCreateMenu" action="<?= $requestUrl ?>/editmenu" method="post" class="generic-form">
 
       <fieldset>
 
-        <label for="nom">Nom du menu: <input type="text" name="nom_menu" value="<?= $edit_menu['nom_menu'] ?>" required></label>
-        <label for="entree">Entrée : <input type="text" name="entree" value="<?= $edit_menu['entree'] ?>" required></label>
-        <label for="plat">Plat : <input type="text" name="plat" value="<?= $edit_menu['plat'] ?>" required></label>
-        <label for="dessert">Dessert : <input type="text" name="dessert" value="<?= $edit_menu['dessert'] ?>" required></label>
-        <label for="tarif">Tarif : <input type="text" name="tarif" value="<?= $edit_menu['tarif'] ?>" required></label>
+        <label for="nom">Nom du menu: <input type="text" name="nom_menu" value="<?= $edit_menu['nom_menu'] ?>" required></label></br>
+        <label for="entree">Entrée : <input type="text" name="entree" value="<?= $edit_menu['entree'] ?>" required></label></br>
+        <label for="plat">Plat : <input type="text" name="plat" value="<?= $edit_menu['plat'] ?>" required></label></br>
+        <label for="dessert">Dessert : <input type="text" name="dessert" value="<?= $edit_menu['dessert'] ?>" required></label></br>
+        <label for="tarif">Tarif : <input type="text" name="tarif" value="<?= $edit_menu['tarif'] ?>" required></label></br>
               <input type="hidden" name="id" value="<?= $edit_menu['id'] ?>">
         <button type="submit" name="" id="addMenu">Modifier <i class="fa fa-refresh" aria-hidden="true"></i></button>
         <a id="deleteMenu" href="<?= $requestUrl ?>/menu/deletemenu?id=<?= $edit_menu['id'] ?>">Supprimer <i class="fa fa-trash" aria-hidden="true"></i></a>
@@ -36,17 +36,17 @@ if($check_log == true){
 
   </form>
 
-  <aside class="">
+  <!-- <aside class="">
     <h2>Liste des menus du restaurant</h2>
     <div class="list_menu">
 <p>Ici bientôt la liste des menu disponible</p>
     </div>
-  </aside>
+  </aside> -->
 </section>
-<section class="">
+<!-- <section class="">
   <h2>Liste des commandes</h2>
   <div class="list_commande">
     <p>Ici bientôt la liste des commandes</p>
 
   </div>
-</section>
+</section> -->

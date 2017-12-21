@@ -10,9 +10,9 @@ class RecapbasketController{
  * @return [method] [réalise les requetes GET]
  */
 public function httpGetMethod(Http $http, array $queryFields){
-  var_dump("GET");
+  // var_dump("GET");
 
-  var_dump($queryFields);
+  // var_dump($queryFields);
     $new_log = new Usersession();
     $check_log = $new_log->isAuthenticated();
 
@@ -25,7 +25,6 @@ public function httpGetMethod(Http $http, array $queryFields){
         // }
 
 }
-
 
   public function httpPostMethod(Http $http, array $queryFields){
     // var_dump("POST");
@@ -45,12 +44,12 @@ public function httpGetMethod(Http $http, array $queryFields){
           }else{
               // On réuni les 2 tableaux $queryFields['id'] et $queryFields['quantity']
               $get_quantity = array_combine($queryFields['id'], $queryFields['quantity']);
-              var_dump($get_quantity);
-              var_dump($_SESSION['panier']);
+              // var_dump($get_quantity);
+              // var_dump($_SESSION['panier']);
 
               foreach ($get_quantity as $id => $quantity) {
                 $_SESSION['panier'][$id]['quantity']= $quantity;
-                var_dump('salut 1');
+                // var_dump('salut 1');
                 // foreach ($_SESSION['panier'] as $key => $value) {
                 //         var_dump('salut 3');
                 //

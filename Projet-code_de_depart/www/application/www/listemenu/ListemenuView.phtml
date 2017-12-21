@@ -7,7 +7,7 @@ $check_log = $new_log->isAuthenticated();
 
 
  ?>
-<table>
+<table class="generic-table">
       <thead>
                 <tr>
                   <td>Listes des menus</td>
@@ -25,7 +25,7 @@ $check_log = $new_log->isAuthenticated();
 
                         ?>
                       <td>
-                            <?= str_replace("_", " ", ucfirst($key)); ?>
+                            <strong><?= str_replace("_", " ", ucfirst($key)); ?></strong>
                       </td>
                   <?php
                   };break;// deuxième foreach
@@ -45,7 +45,7 @@ $check_log = $new_log->isAuthenticated();
                   // var_dump($id_menus);
                   $edit_list = array_slice($array, -5, null, false);
                   // var_dump($edit_list);
-                
+
                   foreach ($edit_list as $key => $value) {
 
                   ?>
